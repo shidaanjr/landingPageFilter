@@ -19,7 +19,8 @@ function App() {
          <div className="row">
            <div className="col-sm-3">
              <FilterBar 
-                categories= {generateCategoryDataForDropDown()} />
+                categories= {generateCategoryDataForDropDown()}
+                setAllData={setData} />
            </div>
            <div className="col-sm-9">
              <div className="row mt-5">

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import {data} from './MOCK_DATA'
 
+const FilterBar = ({categories , setAllData}) => {
 
-const FilterBar = ({categories}) => {
-  const handleFiterName= (Name)=>{
-    const filterData= data.filter((item) =>{
+  const handleFiterName = (Name)=>{
+    const filterData = data.filter((item) =>{
       if(item.name.toLowerCase().includes(Name.toLowerCase())){
        return item
       }
@@ -15,10 +16,11 @@ const FilterBar = ({categories}) => {
     setData(filterData)
 }
   const [Name, setName]= useState('')
+
   const handleNameChange= (event)=>{
-    const {value} = event.target
-    setName(value);
-    handleFiterName(value);
+
+    setName(event.target.value);
+    handleFiterName(event.target.value);
 
   }
   return (
@@ -33,7 +35,7 @@ const FilterBar = ({categories}) => {
           type="text"
           className="form-control"
           id="name"
-          onChange={handleNameChange()}
+          onChange={handleNameChange}
 
           />
           
